@@ -26,12 +26,21 @@ gem 'redcarpet', '3.3.4'
 # Markdown Lorem Ipsum generator
 gem 'doctor_ipsum', '0.3.1'
 
+# FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord
+gem 'friendly_id', '5.2.0'
+
+# If Turbolinks are not enough for you. Wiselinks makes your application work faster.
+gem 'wiselinks', '1.2.1'
+
 gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
 #notifyjs
 gem 'rails-assets-notifyjs', '0.4.2', source: 'https://rails-assets.org'
 #é um alert mais bonitinho
 gem 'rails-assets-bootbox', '4.4.0', source: 'https://rails-assets.org'
-
+# Bootstrap Mardown
+gem 'rails-assets-bootstrap-markdown', '2.10.0', source: 'https://rails-assets.org'
+# Marked
+gem 'rails-assets-marked', '0.3.6', source: 'https://rails-assets.org'
 # Bootstrap Notify
 gem 'rails-assets-bootstrap.growl', '3.1.3', source: 'https://rails-assets.org'
 # Animate CSS

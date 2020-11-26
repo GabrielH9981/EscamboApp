@@ -1,7 +1,9 @@
 /*
  *= require bootstrap
+ *= require bootstrap-markdown
  */
 
  body {
     padding-top: 56px;
   }
+  

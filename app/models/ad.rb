@@ -5,7 +5,7 @@ class Ad < ActiveRecord::Base
 
   # Associations
   belongs_to :member
-  belongs_to :category
+  belongs_to :category, counter_cache: true
 
   validates :title, :category, presence: true
   validates :title, :description_md, :description_short, :category, presence: true
@@ -14,7 +14,8 @@ class Ad < ActiveRecord::Base
   
   scope :descending_order, -> (quantity = 10) {limit(quantity).order(created_at: :desc)}
   scope :to_the, -> (member) {where(member: member)}
-
+  scope :by_category, ->(id) { where(category: id) }
+  
   has_attached_file :picture, styles: { large: "800x300#", medium: "320x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
