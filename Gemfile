@@ -32,6 +32,11 @@ gem 'friendly_id', '5.2.0'
 # If Turbolinks are not enough for you. Wiselinks makes your application work faster.
 gem 'wiselinks', '1.2.1'
 
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
+gem 'kaminari', '0.17.0'
+# Translations for the kaminari gem
+gem  'kaminari-i18n', '0.4.0'
+
 gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
 #notifyjs
 gem 'rails-assets-notifyjs', '0.4.2', source: 'https://rails-assets.org'
