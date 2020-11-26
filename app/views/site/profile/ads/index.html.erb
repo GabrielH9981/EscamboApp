@@ -1,0 +1,32 @@
+<h1>LISTANDO ANÚNCIOS</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Imagem</th>
+      <th>Título</th>
+      <th>Categoria</th>
+      <th>Preço</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ads.each do |item| %>
+      <tr>
+        <th scope="row"><%= item.id %></th>
+        <td><%= image_tag item.picture(:thumb) %></td>
+        <td><%= item.title %></td>
+        <td><%= item.category.description %></td>
+        <td><%= humanized_money_with_symbol item.price %></td>
+        <td>
+          <%= link_to edit_site_profile_ad_path(item.id) do %> 
+            <button type="button" class="btn btn-primary btn-sm">Editar</button>
+            <% end %>
+            &nbsp; &nbsp;
+            <button type="button" class="btn btn-danger btn-sm">Excluir</button>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,70 @@
+
+<h1 class="page-header">Administradores</h1>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Listando Administradores
+
+            <% if policy(@admins).new? %>
+                <%= link_to new_backoffice_admin_path, class:"btn btn-success btn-circle", style:"float:right" do%>
+                <i class="fa fa-plus"></i>
+                <% end %>
+            <% else %>
+                <%= link_to new_backoffice_admin_path, class:"btn btn-success btn-circle btn-lg", style:"float:right", disabled:"disabled" do %>
+                <i class="fa fa-plus" disabled></i>
+                <% end %>
+            <% end %>
+
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Tipo de Acesso</th>
+                            <th><center>Ações</center></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @admins.each do |item| %>
+                        <tr>
+                            <td><%= item.id %></td>
+                            <td><%= item.name %></td>
+                            <td><%= item.email %></td>
+                            <td><%= item.role_br %></td>
+                            <td style="width: 150px">
+
+                            <%= link_to edit_backoffice_send_mail_path(item.id), class: "btn btn-warning btn-circle", 
+                                remote: true do %>
+                                <i class="fa fa-envelope"></i>
+                            <% end %>
+                            &nbsp &nbsp
+
+                            <%= link_to edit_backoffice_admin_path(item.id), class: "btn btn-primary btn-circle" do %>
+                                <i class="fa fa-pencil"></i>
+                            <% end %>
+                            &nbsp &nbsp
+
+                            <% if (current_admin.id != item.id) && policy(@admins).destroy? %>
+                                <%= link_to backoffice_admin_path(item.id), class: "btn btn-danger btn-circle",
+                                method: :delete, data: { confirm: "Deseja realmente excluir <b>(#{item.name})</b> ?" } do %>
+                                    <i class="fa fa-times"></i>
+                                <% end %>
+                            <% else %>
+                                <button type="button" disabled="disabled" class="btn btn-danger btn-circle"><i class="fa fa-times"></i>
+                            <% end %>
+                            </td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+
+<%= render partial: 'backoffice/admins/shared/send_mail' %>
