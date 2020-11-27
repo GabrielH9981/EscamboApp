@@ -45,11 +45,19 @@ namespace :dev do
   puts "Gerando Members ..."
 
     100.times do |item|
-      Member.create!(
-                    email: Faker::Internet.email,
-                    password: "123456",
-                    password_confirmation: "123456"
-                   )
+      member = Member.new(
+        email: Faker::Internet.email,
+        password: "123456",
+        password_confirmation: "123456"
+        )
+
+      member.build_profile_member
+
+      member.profile_member.first_name = Faker::Name.first_name
+      member.profile_member.second_name = Faker::Name.last_name
+
+      member.save!
+
     end
   puts "Members gerados com sucesso!"
   end

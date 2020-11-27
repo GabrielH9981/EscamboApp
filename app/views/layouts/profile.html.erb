@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Escamboapp</title>
+    <title>EscamboApp</title>
 
       <%= stylesheet_link_tag    'application', media: 'all' %>
       <%= stylesheet_link_tag    'site', media: 'all' %>
@@ -44,12 +44,16 @@
                 </li>
                 
                 <li>
+                    <%= link_to "Meus Dados", edit_site_profile_my_datum_path(current_member.id) %>
+                </li>
+
+                <li>
                     <%= link_to "Meus Anúncios", site_profile_ads_path %>
                 </li>
                
                 <li>
                     <%= link_to "Novo Anúncio", new_site_profile_ad_path %>
-                 </li>
+                </li>
 
             </ul>
         </div>
