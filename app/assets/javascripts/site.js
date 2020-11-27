@@ -4,6 +4,8 @@
 //= require bootstrap-markdown
 //= require marked
 //= require wiselinks
+//= require jquery.raty
+//= require ratyrate
 
 /** Wiselinks Gem **/
 $(function(){

@@ -37,6 +37,9 @@ gem 'kaminari', '0.17.0'
 # Translations for the kaminari gem
 gem  'kaminari-i18n', '0.4.0'
 
+# A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
+gem 'ratyrate', '1.2.2.alpha'
+
 gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
 #notifyjs
 gem 'rails-assets-notifyjs', '0.4.2', source: 'https://rails-assets.org'
